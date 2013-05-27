@@ -1,0 +1,17 @@
+.ui-bar-a {
+	border: 1px solid 		#b92f44 /*{a-bar-border}*/;
+	background: 			#b92f44 /*{a-bar-background-color}*/;
+	color: 					#fff /*{a-bar-color}*/;
+	font-weight: bold;
+	text-shadow: 0 /*{a-bar-shadow-x}*/ -1px /*{a-bar-shadow-y}*/ 0 /*{a-bar-shadow-radius}*/ #000 /*{a-bar-shadow-color}*/;
+	box-shadow: 0px 2px 3px rgba(0,0,0,.3);
+	background-image: #b92f44;
+}
+
+.ui-bar-a,
+.ui-bar-a input,
+.ui-bar-a select,
+.ui-bar-a textarea,
+.ui-bar-a button {
+	font-family: 'Cherry Swash', cursive, Arial, sans-serif /*{global-font-family}*/;
+}
