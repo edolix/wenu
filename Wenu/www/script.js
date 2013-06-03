@@ -44,7 +44,8 @@ $(function(){
 	    }, 1000/6);
     }
     
-    function drawSpinner(){
+    function drawSpinner()
+    {
 		$(".scanSpinner").css("-webkit-transform", "rotate(" + spinnerAngle + "deg)");
 		spinnerAngle = spinnerAngle+3;
 		
