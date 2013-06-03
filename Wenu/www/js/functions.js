@@ -22,7 +22,9 @@ var app = {
     window.localStorage.clear(); //clear LocalStorage!
 //    loadDocumentsDir();
   },
-  onReady:function(){ },
+  onReady:function(){
+    esempio();
+  },
   onMobileInit:function(){
     $.support.cors = true;
     $.mobile.allowCrossDomainPages = true;
@@ -82,6 +84,34 @@ var app = {
   }
 };
 
+function esempio()
+{
+  $.ajax({
+    url:'boh.html',
+    dataType:'html',
+    async:false,
+    success:function(html){
+      obj_replace = {
+         '#NOME#':'Edo',
+         '#ANNI#':'21',
+         '#BESTEMMIA#':'Dio cane! =)'
+      };
+      html = replaceData(html, obj_replace);
+      console.log(html);
+      $('#esempio').html(html);
+    }
+  });
+}
+
+function replaceData(str, obj)
+{
+  $.each(obj, function(search, replace){
+    var r = new RegExp(search, 'g');
+    str = str.replace(r, replace);
+  });
+  return str;
+}
+
 function getDatabase()
 {
   return window.openDatabase("custom", "3.6", "Custom", 3000000);
@@ -129,15 +159,6 @@ function checkNetwork()
 		}
 	}
 	return true;
-}
-
-function getDeviceType()
-{
-  var type_of_device = 'smartphone';
-  if( device.model.match(/^iPad/) != null ){
-    type_of_device = 'tablet';
-  }
-  return type_of_device;
 }
 
 function getFromLocalStorage(key, index_of_array, type)
